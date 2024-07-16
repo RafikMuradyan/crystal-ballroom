@@ -10,7 +10,7 @@ async function bootstrap(): Promise<NestExpressApplication> {
     cors: true,
   });
 
-  const uploadDir = join(__dirname, 'uploads');
+  const uploadDir = join(__dirname, '..', 'dist', 'uploads');
 
   if (!existsSync(uploadDir)) {
     mkdirSync(uploadDir, { recursive: true });
