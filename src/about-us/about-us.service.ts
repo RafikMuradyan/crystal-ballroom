@@ -37,7 +37,7 @@ export class AboutUsService {
       const aboutUs = await createdAboutUs.save();
       return aboutUs;
     } catch (error) {
-      const filePath = path.join('dist/uploads', filename);
+      const filePath = path.join('uploads', filename);
       fs.unlink(filePath, (err) => {
         if (err) {
           console.error('Failed to delete file:', err);
@@ -59,7 +59,7 @@ export class AboutUsService {
       }
 
       const filename = aboutUs.image;
-      const filePath = path.join('dist/uploads', filename);
+      const filePath = path.join('uploads', filename);
 
       await this.aboutUsModel.findByIdAndDelete(id);
 
@@ -104,7 +104,7 @@ export class AboutUsService {
       }
 
       if (newFilename) {
-        const oldFilePath = path.join('dist/uploads', aboutUs.image);
+        const oldFilePath = path.join('uploads', aboutUs.image);
         fs.unlink(oldFilePath, (err) => {
           if (err) {
             console.error('Failed to delete old file:', err);
@@ -119,7 +119,7 @@ export class AboutUsService {
       return await aboutUs.save();
     } catch (error) {
       if (newFilename) {
-        const newFilePath = path.join('dist/uploads', newFilename);
+        const newFilePath = path.join('uploads', newFilename);
         fs.unlink(newFilePath, (err) => {
           if (err) {
             console.error('Failed to delete new file:', err);

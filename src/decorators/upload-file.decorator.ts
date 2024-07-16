@@ -9,7 +9,7 @@ export function UploadFile(fieldName: string) {
       FileInterceptor(fieldName, {
         storage: diskStorage({
           destination: (req, file, cb) => {
-            cb(null, 'dist/uploads/');
+            cb(null, 'uploads/');
           },
           filename: (req, file, cb) => {
             cb(null, `${uuidv4()}-${file.originalname}`);
