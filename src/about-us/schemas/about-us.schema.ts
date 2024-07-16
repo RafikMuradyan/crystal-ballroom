@@ -7,7 +7,7 @@ export class AboutUs {
   @Prop({ required: true, unique: true })
   title: string;
 
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true })
   context: string;
 
   @Prop({ required: true, unique: true })
